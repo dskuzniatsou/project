@@ -6,9 +6,14 @@
 html, 
 body {
   font-family: 'Rubik', sans-serif;
+  max-width: 1400px;
 }
+
 a {
     text-decoration: none;
+}
+a:hover {
+    text-decoration:underline;
 }
 ul {
     list-style: none;
@@ -16,10 +21,20 @@ ul {
 button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover {
+    transform: translateY(-5px);
 }
 .header {
     background: #0a61f7;
     padding: 14px 0;
+}
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .menu-link {
     color: #FFF;
@@ -42,12 +57,35 @@ color: #363940;
     color: #363940;
     margin-bottom: 30px;
 }
+.container {
+    height: 100%;
+    Width: 100%;
+    min-width: 1170px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+}
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 800px;
+}
+
 .text {
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     color: #95a1bb;
-   
+}
+.main .text {
+    margin-bottom: 40px;
+    max-width: 380px;
+}
+.menu {
+    display: flex;
+    gap: 24px;
 }
 .button {
     background: #0a61f7;
@@ -62,6 +100,9 @@ color: #363940;
     text-align: center;
     color: #fff;
 }
+.main-img {
+    align-self: flex-end;
+}
 .rates-section{
     padding: 100px 0;
     background: #f9fafc;
@@ -71,6 +112,11 @@ color: #363940;
 }
 .rates-section.text{
     margin-bottom: 40px;
+}
+.rates-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .table{
     border-collapse: collapse;
@@ -123,6 +169,10 @@ color: #0a61f7;
 .create-account-section{
     padding: 100px 0;
 }
+.account-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
 .create-account-section .title{
     margin-bottom: 50px;
 }
@@ -154,6 +204,12 @@ width: 100%;
 input[type="email"], input[type="password"], input[type="date"], select{
     width: 230px;
     height: 50px;
+    flex-grow: 1;
+}
+.stack,
+fieldset {
+    display: flex;
+    column-gap: 30px;
 }
 fieldset{
     width: 100%;
@@ -164,6 +220,18 @@ textarea{
     min-height: 80px;
     resize: none;
 }
+form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.fields-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 form .button{
     width: 100%;
 }
@@ -173,6 +241,9 @@ select {
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
 background: url(./assets/images/Calendar.svg) no-repeat;
+}
+input[type="radio"], input[type="checkbox"], input[type="date"], select{
+    cursor: pointer;
 }
 
 footer{
