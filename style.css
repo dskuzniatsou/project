@@ -1,12 +1,12 @@
 * {
-   padding: 0px;
-   margin: 0px;
-   box-sizing: border-box; 
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box; 
 }
 html, 
 body {
-  font-family: 'Rubik', sans-serif;
-  max-width: 1400px;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
 }
 
 a {
@@ -15,7 +15,7 @@ a {
 a:hover {
     text-decoration:underline;
 }
-ul {
+ul {   
     list-style: none;
 }
 button {
@@ -27,6 +27,28 @@ button {
 button:hover {
     transform: translateY(-5px);
 }
+.title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 43px;
+    color: #363940;
+}
+.text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #95a1bb;
+}
+.container {
+    height: 100%;
+    Width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+}
+
 .header {
     background: #0a61f7;
     padding: 14px 0;
@@ -36,6 +58,10 @@ button:hover {
     justify-content: space-between;
     align-items: center;
 }
+.menu {
+    display: flex;
+    gap: 24px;
+}
 .menu-link {
     color: #FFF;
     font-size: 12px;
@@ -44,11 +70,11 @@ button:hover {
     letter-spacing: 1.4px;
     text-transform: uppercase;
 }
-.title {
-    font-weight: 500;
-font-size: 32px;
-line-height: 43px;
-color: #363940;
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
 }
 .mine-title{
     font-weight: 500;
@@ -57,47 +83,21 @@ color: #363940;
     color: #363940;
     margin-bottom: 30px;
 }
-.container {
-    height: 100%;
-    Width: 100%;
-    min-width: 1170px;
-    padding: 0 15px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid red;
-}
-.main-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 800px;
-}
-
-.text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    color: #95a1bb;
-}
 .main .text {
     margin-bottom: 40px;
     max-width: 380px;
 }
-.menu {
-    display: flex;
-    gap: 24px;
-}
+
 .button {
     background: #0a61f7;
     border-radius: 4px;
     width: 152px;
-    height: 50px;
+    height: 51px;
     font-weight: 500;
     font-size: 14px;
     line-height: 19.6px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    text-align: center;
     color: #fff;
 }
 .main-img {
@@ -107,17 +107,18 @@ color: #363940;
     padding: 100px 0;
     background: #f9fafc;
 }
+.rates-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .rates-section.title{
     margin-bottom: 20px;
 }
 .rates-section.text{
     margin-bottom: 40px;
 }
-.rates-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 .table{
     border-collapse: collapse;
 }
@@ -159,13 +160,14 @@ letter-spacing: 0.12em;
 text-transform: uppercase;
 color: #0a61f7;
 }
-.table-footer td{
-    padding: 30px 0;
-}
 .table-button.active{
     background: #0a61f7;
     color: #fff;
 }
+.table-footer td{
+    padding: 30px 0;
+}
+
 .create-account-section{
     padding: 100px 0;
 }
@@ -186,17 +188,24 @@ color: #0a61f7;
     margin-left:30px ;
     color: #363940;
 }
+form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 input, select, textarea, fieldset{
     border: 1px solid #95a1bb;
-border-radius: 4px;
-padding: 14px 15px;
+    border-radius: 4px;
+    padding: 14px 15px;
 }
 input, select, textarea, fieldset, label, legend, input::placeholder, select::placeholder, textarea::placeholder{
     font-weight: 400;
-font-size: 16px;
-line-height: 22.4px;
-color: #95a1bb;
-font-family: inherit;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: #95a1bb;
+    font-family: inherit;
 }
 input[type="text"]{
 width: 100%;
@@ -206,10 +215,18 @@ input[type="email"], input[type="password"], input[type="date"], select{
     height: 50px;
     flex-grow: 1;
 }
+input[type="radio"], input[type="checkbox"], input[type="date"], select{
+    cursor: pointer;
+}
 .stack,
 fieldset {
     display: flex;
     column-gap: 30px;
+}
+.fields-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 fieldset{
     width: 100%;
@@ -219,18 +236,6 @@ textarea{
     width: 100%;
     min-height: 80px;
     resize: none;
-}
-form {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.fields-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 form .button{
     width: 100%;
@@ -242,11 +247,9 @@ select {
 input[type="date"]::-webkit-calendar-picker-indicator {
 background: url(./assets/images/Calendar.svg) no-repeat;
 }
-input[type="radio"], input[type="checkbox"], input[type="date"], select{
-    cursor: pointer;
-}
 
-footer{
+
+.footer{
     background: #0a61f7;
     text-align: center;
     padding: 20px 0;
